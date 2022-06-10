@@ -1,14 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Modal } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { themes } from './src/constans/themes/themes';
-import { List, ModalComponent, Input, Title } from './src/components';
+import { List, ModalComponent, Input, Title, AboutUs } from './src/components';
+import { useFonts } from 'expo-font';
 
 export default function App() {
   const [task, setTask] = useState('')
   const [saveTask, setSaveTask] = useState([])
   const [modalVisible, setModalVisible] = useState(false)
   const [itemSelected, setItemSelected] = useState('')
+  let [loaded] = useFonts({
+    Kdam: require("./assets/fonts/KdamThmorPro-Regular.ttf"),
+    Nuosu: require("./assets/fonts/NuosuSIL-Regular.ttf"),
+  });
+
+  if (!loaded) {
+    return <AppLoading />;
+  }
 
   const onHandleInput = (text) => {
     setTask(text);
@@ -36,10 +45,16 @@ export default function App() {
     setModalVisible(!modalVisible)
   }
 
-  return (
-    <View style={themes.container}>
-      <Title/>
-      <View style={styles.containerTask}>
+  const resetPage = () => {
+    setSaveTask([])
+  }
+
+  let content = <AboutUs/>
+
+  if (saveTask.length < 8){
+    content = (
+      <>
+        <View style={styles.containerTask}>
         <Input
         value={task}
         onChangeText={onHandleInput}
@@ -51,32 +66,51 @@ export default function App() {
         disabled={task.length === 0}
         />
         <StatusBar style="auto" />
-      </View>
-      <List
-        saveTask={saveTask}
-        onPressItem={handleModal}
-      />
-      <ModalComponent
-        animationType='slide'
-        visible={modalVisible}
-        onRequestClose={() => null}
-      >
-        <View style = {styles.modalContent}>
-          <View style = {styles.modalTitleContainer}>
-            <Text style = {styles.modalTitle}>Borrar Nota</Text>
-            <TouchableOpacity 
-             onPress={() => setModalVisible(!modalVisible)}>
-              <Text style = {styles.deleteButtonSure}>x</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style = {styles.modalText}>Estas seguro?</Text>
-          <Text style = {styles.modalMessage}>{itemSelected.value}</Text>
-          <Button
-          title='Borrar'
-          color={'#A70E0E'}
-          onPress={() => onHandleDelete(itemSelected)}/>
         </View>
-      </ModalComponent>
+        <List
+          saveTask={saveTask}
+          onPressItem={handleModal}
+        />
+        <ModalComponent
+          animationType='slide'
+          visible={modalVisible}
+          onRequestClose={() => null}
+        >
+          <View style = {styles.modalContent}>
+            <View style = {styles.modalTitleContainer}>
+              <Text style = {styles.modalTitle}>Borrar Nota</Text>
+              <TouchableOpacity 
+              onPress={() => setModalVisible(!modalVisible)}>
+                <Text style = {styles.deleteButtonSure}>x</Text>
+              </TouchableOpacity>
+            </View>
+            <Text style = {styles.modalText}>Estas seguro?</Text>
+            <Text style = {styles.modalMessage}>{itemSelected.value}</Text>
+            <Button
+            title='Borrar'
+            color={'#A70E0E'}
+            onPress={() => onHandleDelete(itemSelected)}/>
+          </View>
+          </ModalComponent>
+      </>
+    )
+  } else {
+    content = (
+      <View>
+        <AboutUs/>
+        <Button 
+              title='Volver al inicio'
+              color={'#8814AB'}
+              onPress={() => resetPage()}
+        />
+      </View>
+    )
+  }
+
+  return (
+    <View style={themes.container}>
+      <Title/>
+      {content}
     </View>
   );
 }
@@ -95,20 +129,22 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     alignItems: 'center',
+    fontFamily: 'Kdam',
   },
   modalTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontFamily: 'Nuosu',
     marginVertical: 20,
     marginHorizontal: 20,
   },
   modalText: {
     fontSize: 16,
     marginVertical: 10,
+    fontFamily: 'Kdam',
   },
   modalMessage: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Kdam',
     marginVertical: 20,
     margin: 5,
   },
@@ -116,6 +152,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexDirection: 'row',
+    fontFamily: 'Kdam',
   },
   deleteButtonSure: {
     backgroundColor: '#8814AB',
@@ -123,5 +160,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 5,
     fontSize: 14,
+    fontFamily: 'Kdam',
   }
 })

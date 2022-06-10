@@ -4,3 +4,4 @@ export { default as List } from './list';
 export { default as ModalComponent } from './modal'
 export { default as Input } from './input'
 export { default as Title } from './Title'
+export { default as AboutUs } from './aboutUs'

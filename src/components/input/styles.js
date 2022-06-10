@@ -9,5 +9,6 @@ export const styles = StyleSheet.create({
         height: 40,
         fontSize: 14,
         color: '#212121',
+        fontFamily: 'Kdam',
     },
 });
