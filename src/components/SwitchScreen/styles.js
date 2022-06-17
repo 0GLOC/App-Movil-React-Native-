@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     textAboutUs: {
         fontFamily: 'Nuosu',
-        marginLeft: '15%',
-        marginTop: 20,
-        marginBottom: 20,
+        fontSize: 18,
+        marginHorizontal: '7%',
+        marginTop: '45%',
     },
 });

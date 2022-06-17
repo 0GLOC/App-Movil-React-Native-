@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, Button } from "react-native";
 import { styles } from "./styles";
 
-const AboutUs = () => {
+const SwitchScreen = () => {
 
     return (
         <View>
@@ -14,4 +14,4 @@ const AboutUs = () => {
     )
 };
 
-export default AboutUs;
+export default SwitchScreen;
