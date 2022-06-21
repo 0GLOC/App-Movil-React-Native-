@@ -5,8 +5,8 @@ import MainNavigator from "./main";
 const AppNavigator = () => {
     return(
         <NavigationContainer>
-        <MainNavigator/>
-    </NavigationContainer>
+            <MainNavigator/>
+        </NavigationContainer>
     )
 }
 
