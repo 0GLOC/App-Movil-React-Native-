@@ -12,11 +12,12 @@ const MainNavigator = () => {
         initialRouteName='Categorias'
         screenOptions={{
             headerStyle: {
-                backgroundColor: isAndroid ? colors.default : colors.aventuraColor
+                backgroundColor: isAndroid ? colors.default : colors.default
             },
             headerTintColor: colors.white,
             headerTitleStyle: {
                 fontFamily: 'Kdam',
+                fontSize: 25,
             },
             headerTitleAlign: 'center'
         }}

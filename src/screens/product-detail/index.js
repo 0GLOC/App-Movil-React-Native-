@@ -1,13 +1,12 @@
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
+import { useSelector } from 'react-redux';
 import { styles } from "./styles";
 
-const ProductDetailScreen = ({ navigation, route }) => {
+const ProductDetailScreen = ({ navigation }) => {
 
-    const product = route.params.product
-
+    const product = useSelector(state => state.products.selected)
     const { 
-        id,
         name,
         image,
         price,

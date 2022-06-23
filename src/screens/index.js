@@ -1,3 +1,5 @@
 export { default as ProductDetailScreen } from './product-detail/index'
 export { default as ProductScreen } from './product/index'
 export { default as CategoriesScreen } from './categories/index'
+export { default as Cart } from './cart/index'
+export { default as Orders } from './orders/index'

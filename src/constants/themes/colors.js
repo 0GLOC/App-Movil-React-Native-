@@ -7,4 +7,6 @@ export const colors = {
     white: '#ffffff',
     black: '#000000',
     default: '#e2baab',
+    delete: '#942032',
+    confirm: '#70c363',
 }
