@@ -6,7 +6,9 @@ export const colors = {
     aventuraColor: '#e2baab',
     white: '#ffffff',
     black: '#000000',
+    gray: '#78797e',
     default: '#e2baab',
+    defaultLight: '#EDDDD7',
     delete: '#942032',
     confirm: '#70c363',
 }

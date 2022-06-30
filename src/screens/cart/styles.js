@@ -21,16 +21,6 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: 'Kdam',
     },
-    totalContainer: {
-        flex: 0.35,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    },
-    totalTitle: {
-        fontSize: 14,
-        fontFamily: 'Kdam',
-    },
     total: {
         fontSize: 15,
         fontFamily: 'Kdam',
