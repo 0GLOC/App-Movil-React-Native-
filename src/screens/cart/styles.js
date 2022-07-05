@@ -15,14 +15,17 @@ export const styles = StyleSheet.create({
         paddingVertical: 12,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        color: colors.white
     },
     buttonText: {
         fontSize: 14,
         fontFamily: 'Kdam',
+        color: colors.white
     },
     total: {
         fontSize: 15,
         fontFamily: 'Kdam',
+        color: colors.white
     },
 })

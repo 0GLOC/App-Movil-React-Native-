@@ -4,7 +4,7 @@ import { colors } from "../../constants/themes/colors";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.defaultLight,
     },
     name: {
         fontFamily: 'Kdam',
@@ -19,12 +19,16 @@ export const styles = StyleSheet.create({
         fontFamily: 'Kdam',
         fontSize: 16,
         marginTop: 10,
+        color: colors.white,
+        textShadowRadius: 10,
     },
     desarrollador: {
         marginVertical: 5,
         fontFamily: 'Kdam',
         textAlign: 'right',
         paddingRight: 20,
+        color: colors.white,
+        textShadowRadius: 10,
     },
     button: {
         backgroundColor: colors.default,

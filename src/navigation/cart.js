@@ -12,7 +12,7 @@ const CartNavigator = () => {
         initialRouteName='Categorias'
         screenOptions={{
             headerStyle: {
-                backgroundColor: isAndroid ? colors.default : colors.aventuraColor
+                backgroundColor: isAndroid ? colors.default : colors.default
             },
             headerTintColor: colors.white,
             headerTitleStyle: {

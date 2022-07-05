@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
         fontFamily: "Kdam",
     },
     prompt: {
-        paddingTop: 20,
+        paddingVertical: 20,
         alignItems: "center",
     },
     promptMessage: {

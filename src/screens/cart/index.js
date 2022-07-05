@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Alert } from "react-native";
 import CartItem from "../../components/cart/cart-item";
 import { useSelector, useDispatch } from "react-redux";
 import { confirmCart, removeItem } from "../../store/action";
@@ -17,6 +17,7 @@ const Cart = () => {
 
     const onHandlerConfirmCart = () => {
         dispatch(confirmCart(cart, total))
+        Alert.alert('Compra realizada con exito!', 'Puede ver sus compras en ordenes')
     }
 
     const renderItem = ({ item }) => <CartItem item={item} onDelete={onHandlerDeleteCart} />
