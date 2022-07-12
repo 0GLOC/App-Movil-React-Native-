@@ -5,6 +5,7 @@ import { colors } from "../constants/themes/colors";
 import MainNavigator from "./main";
 import CartNavigator from "./cart";
 import OrdersNavigator from "./orders";
+import GamesAdd from "./gamesAdd";
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -33,6 +34,16 @@ const TabNavigator = () => {
             options={{
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name={ focused ? 'game-controller' : 'game-controller-outline' } size={20} color={ focused ? colors.default : colors.aventuraColor}/>
+                )
+            }}
+            />
+
+            <BottomTabs.Screen 
+            name="AddGamesTab" 
+            component={GamesAdd}
+            options={{
+                tabBarIcon: ({ focused }) => (
+                    <Ionicons name={ focused ? 'ios-add-circle' : 'ios-add-circle-outline' } size={20} color={ focused ? colors.default : colors.aventuraColor}/>
                 )
             }}
             />

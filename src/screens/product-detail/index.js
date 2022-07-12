@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, Text, View, TouchableOpacity } from "react-native";
+import { Image, ScrollView, Text, View, TouchableOpacity, Alert } from "react-native";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from "../../store/action";
 import { styles } from "./styles";
@@ -19,6 +19,7 @@ const ProductDetailScreen = ({ navigation }) => {
 
     const onHandlerAddToCart = (item) => {
         dispatch(addToCart(item))
+        Alert.alert('Listo!', `${name} agregado al carrito`)
     }
 
     return (
